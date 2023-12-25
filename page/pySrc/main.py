@@ -38,10 +38,10 @@ from canvas import Canvas
 
 if __name__ == "__main__":
     jogadores = [
-        Jogador("Jose"),
-        Jogador("Fernando"),
-        Jogador("Igor"),
-        Jogador("Vanessa")
+        Jogador("green", "Jose" ),
+        Jogador("red", "Fernando"),
+        Jogador("blue", "Igor"),
+        Jogador("yellow", "Vanessa")
     ]
     ilha = IlhaProibida(jogadores)
 

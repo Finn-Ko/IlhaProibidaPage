@@ -1,7 +1,7 @@
 """Página Montagem do Tabulheiro (Ilha) do jogo Ilha Proibida Equipe Fogo.
 
 .. codeauthor:: Fernanda Araujo <fernandacsaraujo@gmail.com>
-.. codeauthor::  Finn Kockelke <finn_kockelke@gmx.net>
+.. codeauthor:: Finn Kockelke <finn_kockelke@gmx.net>
 .. codeauthor:: Vanessa M Vianna <vanmvianna@gmail.com>
 .. codeauthor:: Anderson Amorim da Silva <anderson.amorix@gmail.com>
 

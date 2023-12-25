@@ -10,7 +10,6 @@ class Canvas:
         img = window.Image.new()
         img.src = island.image_src
 
-        # Draw the image on the canvas when it's loaded
         def on_image_load(e):
             if island.afundado:
                 self.__ctx__.globalAlpha = 0.4

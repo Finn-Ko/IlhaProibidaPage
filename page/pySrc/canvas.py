@@ -11,7 +11,11 @@ class Canvas:
 
         # Draw the image on the canvas when it's loaded
         def on_image_load(e):
-            self.__ctx__.drawImage(img, island.posx * 100, island.posy * 100, 100, 100)
+            if island.afundado:
+                self.__ctx__.globalAlpha = 0.4
+
+            self.__ctx__.drawImage(img, island.posx * 100 + 5, island.posy * 100 + 5, 90, 90)
+            self.__ctx__.globalAlpha = 1
 
         img.bind("load", on_image_load)
 

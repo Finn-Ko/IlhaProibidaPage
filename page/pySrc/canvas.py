@@ -34,6 +34,23 @@ class Canvas:
                 self.__ctx__.font = "15px Luminari"
                 self.__ctx__.fillText(player.nome[0], island.posx * 100 + 15 + x * 30, island.posy * 100 + 25, 30, 30)
 
+            if island.tafv != " ":
+                self.__ctx__.fillStyle = "black"
+                self.__ctx__.fillRect(island.posx * 100 + 65, island.posy * 100 + 50, 30, 30)
+
+            tafv_emoji = ""
+            if island.tafv == "t":
+                tafv_emoji = "🪨"
+            elif island.tafv == "a":
+                tafv_emoji = "💧"
+            elif island.tafv == "f":
+                tafv_emoji = "🔥"
+            elif island.tafv == "v":
+                tafv_emoji = "🌬️"
+
+            self.__ctx__.font = "30px Luminari"
+            self.__ctx__.fillText(tafv_emoji, island.posx * 100 + 65, island.posy * 100 + 75)
+
             self.__ctx__.globalAlpha = 1
 
         img.bind("load", on_image_load)

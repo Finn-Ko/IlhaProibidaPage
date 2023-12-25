@@ -4,14 +4,38 @@ from browser import document, window, html
 
 class Canvas:
     def __init__(self):
+        """
+        Inicializa a instância da classe Canvas.
+
+        Cria uma instância do Canvas, obtendo o elemento canvas do documento HTML
+        e o contexto 2D associado para desenho.
+
+        """
         self.__canvas__ = document['gameCanvas']
         self.__ctx__ = self.__canvas__.getContext('2d')
 
     def draw_island(self, island):
+        """
+        Desenha uma ilha no canvas.
+
+        Args:
+            island (objeto): Instância da classe que representa uma ilha.
+
+        """
         img = window.Image.new()
         img.src = island.image_src
 
         def on_image_load(e):
+            """
+            Manipula o evento de carregamento da imagem.
+
+            Esta função é chamada quando a imagem da ilha termina de carregar.
+            Ela desenha a ilha no canvas com informações sobre jogadores, terreno e outros detalhes.
+
+            Args:
+                e (evento): Evento de carregamento da imagem.
+
+            """
             if island.afundado:
                 self.__ctx__.globalAlpha = 0.4
 
@@ -56,4 +80,4 @@ class Canvas:
         img.bind("load", on_image_load)
 
 if __name__ == "__main__":
-    Canvas().draw_rect()
+    Canvas().draw_island(some_island_instance)

@@ -1,5 +1,3 @@
-# radia.fogo.main.py
-# __author__ Fernanda, Finn, Vanessa
 """Página Jogador do jogo Ilha Proibida Equipe Fogo.
 
 EQUIPE FOGO 
@@ -24,6 +22,12 @@ Changelog
 """
 class MaoJogador:
     def __init__(self, dono, cartas=None):
+        """
+        Inicializa a mão do jogador.
+
+        :param dono: Instância do jogador dono da mão.
+        :param cartas: Lista de cartas na mão, padrão é uma lista vazia.
+        """
         if cartas is None:
             cartas = []
         self.dono = dono
@@ -32,7 +36,14 @@ class MaoJogador:
 
 class Jogador:
     def __init__(self, cor, nome="DefaultPlayer", habilidade=""):
-        self.cor=cor
+        """
+        Inicializa a instância do jogador.
+
+        :param cor: Cor do jogador.
+        :param nome: Nome do jogador, padrão é "DefaultPlayer".
+        :param habilidade: Habilidade especial do jogador, padrão é uma string vazia.
+        """
+        self.cor = cor
         self.nome = nome
         self.habilidade = habilidade
         self.mao = MaoJogador(dono=self)
@@ -45,7 +56,6 @@ class Jogador:
         :param outro_jogador: Instância de outro aventureiro.
         """
         self.habilidade, outro_jogador.habilidade = outro_jogador.habilidade, self.habilidade
-
 
 # ilha.py (exemplo de uso da Carta de Troca de Habilidades)
 Jogador1 = Jogador("Explorador", "Pode se mover para qualquer terreno adjacente")

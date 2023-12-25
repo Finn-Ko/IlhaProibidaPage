@@ -31,7 +31,8 @@ class MaoJogador:
         print(f"A mão do {self.dono.nome} possui {len(self.cartas)} cartas")
 
 class Jogador:
-    def __init__(self, nome="DefaultPlayer", habilidade=""):
+    def __init__(self, cor, nome="DefaultPlayer", habilidade=""):
+        self.cor=cor
         self.nome = nome
         self.habilidade = habilidade
         self.mao = MaoJogador(dono=self)

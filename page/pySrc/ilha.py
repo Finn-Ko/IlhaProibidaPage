@@ -26,6 +26,11 @@ NOMES = ("PISTA_POUSO PORTAO_BRONZE PALACIO_CORAL VALE_TENEBROSO PORTAO_OURO POR
          "TEMPLO_LUA CAVERNA_LAVA CAVERNA_SOMBRAS OBSERVATORIO PANTANO_BRUMAS ROCHA_FANTASMA "
          "PALACIO_MARES PENEDO_BALDIO BOSQUE_CARMESIM DUNAS_ENGANO PONTE_SUSPENSA LAGOA_PERDIDA").split()
 
+LINKS = ("CU3TLYh BL6lB7H tLDbzd2 OZE1myn J6ow4jR v0g7eGm 45aU3nf "
+"yKU6ngz sdJ4W5O pjVcyoy ZNuPWqZ O0OSVFt "
+"J160xpm 2j1IAyf b4xtltc E9MflTP NDioDZg TCmLjeT "
+"rYxQaTa MvN7kTU Uni02EK cG5UYCf GC8V8CQ 7o1qq10").split()
+
 __TABLE_SPACES__ = 21
 
 
@@ -85,7 +90,14 @@ class IlhaProibida:
             (2, 5), (3, 5),
         ]
 
-        self.terrenos = [Terreno(nome=NOMES.pop(0), tafv=tafv.pop(0), posx=pss[0][0], posy=pss.pop(0)[1]) for _ in range(24)]
+        self.terrenos = [
+            Terreno(
+                nome=NOMES.pop(0),
+                tafv=tafv.pop(0),
+                posx=pss[0][0], posy=pss.pop(0)[1],
+                image_src=f"https://imgur.com/{LINKS.pop(0)}.jpg")
+            for _ in range(24)
+        ]
         random.shuffle(self.terrenos)
 
         for jogador in jogadores:
@@ -200,7 +212,7 @@ class Terreno:
     Classe que representa um terreno no tabuleiro do jogo Ilha Proibida.
     """
 
-    def __init__(self, nome, tafv, posx, posy):
+    def __init__(self, nome, tafv, posx, posy, image_src):
         """
         Inicializa a instância do terreno.
 
@@ -213,7 +225,7 @@ class Terreno:
         self.tafv = tafv
         self.jogadores = []
         self.afundado = False
-        self.image_src = "http://findicons.com/files/icons/2297/super_mario/32/retro_mushroom_super_3.png"
+        self.image_src = image_src
         self.posx = posx
         self.posy = posy
 

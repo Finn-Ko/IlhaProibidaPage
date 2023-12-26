@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pySrc.canvas &mdash; Documentação Ilha Proibida 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c4403577"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=3b002d5c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ilha Proibida
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar docs" aria-label="Pesquisar docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pySrc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ilha Proibida</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Código do módulo</a></li>
+      <li class="breadcrumb-item active">pySrc.canvas</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Código fonte de pySrc.canvas</h1><div class="highlight"><pre>
+<span></span>
+<span class="c1"># import math</span>
+<span class="c1">#</span>
+<span class="c1"># from browser import document, window, html</span>
+
+<div class="viewcode-block" id="Canvas">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.canvas.Canvas">[documentos]</a>
+<span class="k">class</span> <span class="nc">Canvas</span><span class="p">:</span>
+<div class="viewcode-block" id="Canvas.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.canvas.Canvas.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância da classe Canvas.</span>
+
+<span class="sd">        Cria uma instância do Canvas, obtendo o elemento canvas do documento HTML</span>
+<span class="sd">        e o contexto 2D associado para desenho.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__canvas__</span> <span class="o">=</span> <span class="n">document</span><span class="p">[</span><span class="s1">&#39;gameCanvas&#39;</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__canvas__</span><span class="o">.</span><span class="n">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Canvas.draw_island">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.canvas.Canvas.draw_island">[documentos]</a>
+    <span class="k">def</span> <span class="nf">draw_island</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">island</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Desenha uma ilha no canvas.</span>
+
+<span class="sd">        Args:</span>
+<span class="sd">            island (objeto): Instância da classe que representa uma ilha.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">window</span><span class="o">.</span><span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">()</span>
+        <span class="n">img</span><span class="o">.</span><span class="n">src</span> <span class="o">=</span> <span class="n">island</span><span class="o">.</span><span class="n">image_src</span>
+
+        <span class="k">def</span> <span class="nf">on_image_load</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            Manipula o evento de carregamento da imagem.</span>
+
+<span class="sd">            Esta função é chamada quando a imagem da ilha termina de carregar.</span>
+<span class="sd">            Ela desenha a ilha no canvas com informações sobre jogadores, terreno e outros detalhes.</span>
+
+<span class="sd">            Args:</span>
+<span class="sd">                e (evento): Evento de carregamento da imagem.</span>
+
+<span class="sd">            &quot;&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">island</span><span class="o">.</span><span class="n">afundado</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">globalAlpha</span> <span class="o">=</span> <span class="mf">0.4</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">drawImage</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillRect</span><span class="p">(</span><span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">5</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;white&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;8px Luminari&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillText</span><span class="p">(</span><span class="n">island</span><span class="o">.</span><span class="n">nome</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+            <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">player</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">island</span><span class="o">.</span><span class="n">jogadores</span><span class="p">):</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">beginPath</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">arc</span><span class="p">(</span><span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">30</span> <span class="o">+</span> <span class="mi">15</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="n">player</span><span class="o">.</span><span class="n">cor</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fill</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">lineWidth</span> <span class="o">=</span> <span class="mi">1</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">strokeStyle</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">stroke</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;15px Luminari&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillText</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">15</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">30</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+            <span class="k">if</span> <span class="n">island</span><span class="o">.</span><span class="n">tafv</span> <span class="o">!=</span> <span class="s2">&quot; &quot;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillStyle</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillRect</span><span class="p">(</span><span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">65</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+
+            <span class="n">tafv_emoji</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">if</span> <span class="n">island</span><span class="o">.</span><span class="n">tafv</span> <span class="o">==</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span>
+                <span class="n">tafv_emoji</span> <span class="o">=</span> <span class="s2">&quot;🪨&quot;</span>
+            <span class="k">elif</span> <span class="n">island</span><span class="o">.</span><span class="n">tafv</span> <span class="o">==</span> <span class="s2">&quot;a&quot;</span><span class="p">:</span>
+                <span class="n">tafv_emoji</span> <span class="o">=</span> <span class="s2">&quot;💧&quot;</span>
+            <span class="k">elif</span> <span class="n">island</span><span class="o">.</span><span class="n">tafv</span> <span class="o">==</span> <span class="s2">&quot;f&quot;</span><span class="p">:</span>
+                <span class="n">tafv_emoji</span> <span class="o">=</span> <span class="s2">&quot;🔥&quot;</span>
+            <span class="k">elif</span> <span class="n">island</span><span class="o">.</span><span class="n">tafv</span> <span class="o">==</span> <span class="s2">&quot;v&quot;</span><span class="p">:</span>
+                <span class="n">tafv_emoji</span> <span class="o">=</span> <span class="s2">&quot;🌬️&quot;</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">font</span> <span class="o">=</span> <span class="s2">&quot;30px Luminari&quot;</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">fillText</span><span class="p">(</span><span class="n">tafv_emoji</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posx</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">65</span><span class="p">,</span> <span class="n">island</span><span class="o">.</span><span class="n">posy</span> <span class="o">*</span> <span class="mi">100</span> <span class="o">+</span> <span class="mi">75</span><span class="p">)</span>
+
+            <span class="bp">self</span><span class="o">.</span><span class="n">__ctx__</span><span class="o">.</span><span class="n">globalAlpha</span> <span class="o">=</span> <span class="mi">1</span>
+
+        <span class="n">img</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;load&quot;</span><span class="p">,</span> <span class="n">on_image_load</span><span class="p">)</span></div>
+</div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">Canvas</span><span class="p">()</span><span class="o">.</span><span class="n">draw_island</span><span class="p">(</span><span class="n">some_island_instance</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Anderson Amorim, Fernanda Araujo, Finn Kockelke, Vanessa M Vianna.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

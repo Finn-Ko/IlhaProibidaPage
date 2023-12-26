@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pySrc.ilha &mdash; Documentação Ilha Proibida 1.0.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=c4403577"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=3b002d5c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="../../genindex.html" />
+    <link rel="search" title="Pesquisar" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ilha Proibida
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar docs" aria-label="Pesquisar docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">pySrc</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ilha Proibida</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Código do módulo</a></li>
+      <li class="breadcrumb-item active">pySrc.ilha</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Código fonte de pySrc.ilha</h1><div class="highlight"><pre>
+<span></span>
+<span class="c1"># from browser import window</span>
+<span class="c1"># import javascript</span>
+<span class="c1"># import random</span>
+
+<span class="n">NOMES</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">),</span> <span class="p">(</span><span class="s2">&quot;PISTA_POUSO PORTAO_BRONZE PALACIO_CORAL VALE_TENEBROSO PORTAO_OURO PORTAO_PRATA PORTAO_COBRE &quot;</span>
+         <span class="s2">&quot;PORTAO_FERRO ATALAIA JARDIM_SUSSUROS JARDIM_UIVOS TEMPLO_SOL &quot;</span>
+         <span class="s2">&quot;TEMPLO_LUA CAVERNA_LAVA CAVERNA_SOMBRAS OBSERVATORIO PANTANO_BRUMAS ROCHA_FANTASMA &quot;</span>
+         <span class="s2">&quot;PALACIO_MARES PENEDO_BALDIO BOSQUE_CARMESIM DUNAS_ENGANO PONTE_SUSPENSA LAGOA_PERDIDA&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()))</span>
+
+<span class="n">LINKS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;CU3TLYh BL6lB7H tLDbzd2 OZE1myn J6ow4jR v0g7eGm 45aU3nf &quot;</span>
+<span class="s2">&quot;yKU6ngz sdJ4W5O pjVcyoy ZNuPWqZ O0OSVFt &quot;</span>
+<span class="s2">&quot;J160xpm 2j1IAyf b4xtltc E9MflTP NDioDZg TCmLjeT &quot;</span>
+<span class="s2">&quot;rYxQaTa MvN7kTU Uni02EK cG5UYCf GC8V8CQ 7o1qq10&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+
+<span class="n">__TABLE_SPACES__</span> <span class="o">=</span> <span class="mi">21</span>
+
+
+<div class="viewcode-block" id="IlhaProibida">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.IlhaProibida">[documentos]</a>
+<span class="k">class</span> <span class="nc">IlhaProibida</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe principal que representa o jogo Ilha Proibida.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="IlhaProibida.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.IlhaProibida.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jogadores</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância do jogo Ilha Proibida.</span>
+
+<span class="sd">        :param jogadores: Lista de jogadores.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="n">jogadores</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">jogadores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">cartas_tesouro</span> <span class="o">=</span> <span class="p">[</span><span class="n">CartaTesouro</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="n">carta</span><span class="p">)</span> <span class="k">for</span> <span class="n">carta</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;tafv&quot;</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">+</span> <span class="s2">&quot;dd&quot;</span> <span class="o">+</span> <span class="s2">&quot;hhh&quot;</span><span class="p">)]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cartas_tesouro</span> <span class="o">+=</span> <span class="p">[</span><span class="n">CartaAlagamento</span><span class="p">(</span><span class="n">face</span><span class="o">=</span><span class="n">carta</span><span class="p">)</span> <span class="k">for</span> <span class="n">carta</span> <span class="ow">in</span> <span class="s2">&quot;eee&quot;</span><span class="p">]</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bem-vindos à Ilha Poibida - montagem do tabuleiro&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">monta_tabuleiro_oceano</span><span class="p">(</span><span class="n">jogadores</span><span class="p">)</span>
+
+        <span class="c1"># abaixa um terreno que fica alagado ou afunda no oceano</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">))]</span><span class="o">.</span><span class="n">afundar</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="IlhaProibida.trocar_terrenos">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.IlhaProibida.trocar_terrenos">[documentos]</a>
+    <span class="k">def</span> <span class="nf">trocar_terrenos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">terreno1</span><span class="p">,</span> <span class="n">terreno2</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Troca a posição de dois terrenos no tabuleiro.</span>
+
+
+<span class="sd">        :param terreno1: Instância de um terreno.</span>
+<span class="sd">        :param terreno2: Instância de outro terreno.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">index1</span><span class="p">,</span> <span class="n">index2</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">terreno1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">terreno2</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">index1</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">index2</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">index2</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">index1</span><span class="p">]</span></div>
+
+
+<div class="viewcode-block" id="IlhaProibida.monta_tabuleiro_oceano">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.IlhaProibida.monta_tabuleiro_oceano">[documentos]</a>
+    <span class="k">def</span> <span class="nf">monta_tabuleiro_oceano</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jogadores</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Monta o tabuleiro em forma de diamante.</span>
+
+<span class="sd">        :param jogadores: Lista de jogadores.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">tafv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">15</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="s2">&quot;tafv&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">tafv</span><span class="p">)</span>
+
+        <span class="c1"># o primeiro é o helicoptero, deve ser sem tafv</span>
+        <span class="n">tafv</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot; &quot;</span><span class="p">]</span> <span class="o">+</span> <span class="n">tafv</span>
+        <span class="n">pss</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span>
+            <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span>
+        <span class="p">]</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="n">Terreno</span><span class="p">(</span>
+                <span class="n">nome</span><span class="o">=</span><span class="n">NOMES</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                <span class="n">tafv</span><span class="o">=</span><span class="n">tafv</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
+                <span class="n">posx</span><span class="o">=</span><span class="n">pss</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">posy</span><span class="o">=</span><span class="n">pss</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">image_src</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;https://imgur.com/</span><span class="si">{</span><span class="n">LINKS</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="si">}</span><span class="s2">.jpg&quot;</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">24</span><span class="p">)</span>
+        <span class="p">]</span>
+        <span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">jogador</span> <span class="ow">in</span> <span class="n">jogadores</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">))]</span><span class="o">.</span><span class="n">colocar_jogador</span><span class="p">(</span><span class="n">jogador</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="IlhaProibida.imprimir_tabuleiro_ilha">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.IlhaProibida.imprimir_tabuleiro_ilha">[documentos]</a>
+    <span class="k">def</span> <span class="nf">imprimir_tabuleiro_ilha</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Imprime o tabuleiro da Ilha Proibida no console.</span>
+
+<span class="sd">        O tabuleiro é exibido em forma de diamante, com terrenos representados por seus nomes,</span>
+<span class="sd">        valores de face (tafv) e a presença de jogadores. Cada linha do tabuleiro é separada por</span>
+<span class="sd">        linhas horizontais, e cada coluna é delimitada por barras verticais.</span>
+
+<span class="sd">        :return: None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[:</span><span class="mi">2</span><span class="p">]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">6</span><span class="p">]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">5</span><span class="p">))</span>
+
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">12</span><span class="p">]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">5</span><span class="p">))</span>
+
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">18</span><span class="p">]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">6</span> <span class="o">+</span> <span class="mi">5</span><span class="p">))</span>
+
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="mi">18</span><span class="p">:</span><span class="mi">22</span><span class="p">]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">3</span><span class="p">))</span>
+
+        <span class="n">tabuleiro</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;| &quot;</span>
+        <span class="k">for</span> <span class="n">ter</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">terrenos</span><span class="p">[</span><span class="mi">22</span><span class="p">:]:</span>
+            <span class="n">tabuleiro</span> <span class="o">+=</span> <span class="n">ter</span><span class="o">.</span><span class="n">string_rep</span><span class="p">()</span> <span class="o">+</span> <span class="s2">&quot; | &quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">tabuleiro</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;-&quot;</span> <span class="o">*</span> <span class="p">(</span><span class="n">__TABLE_SPACES__</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CartaTesouro">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.CartaTesouro">[documentos]</a>
+<span class="k">class</span> <span class="nc">CartaTesouro</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que representa uma carta de tesouro no jogo Ilha Proibida.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CartaTesouro.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.CartaTesouro.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância da carta de tesouro.</span>
+
+<span class="sd">        :param face: Face da carta.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">face</span> <span class="o">=</span> <span class="n">face</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CartaAlagamento">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.CartaAlagamento">[documentos]</a>
+<span class="k">class</span> <span class="nc">CartaAlagamento</span><span class="p">(</span><span class="n">CartaTesouro</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que representa uma carta de alagamento no jogo Ilha Proibida.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="CartaAlagamento.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.CartaAlagamento.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância da carta de alagamento.</span>
+
+<span class="sd">        :param face: Face da carta.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Carta_Troca_Terrenos">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Carta_Troca_Terrenos">[documentos]</a>
+<span class="k">class</span> <span class="nc">Carta_Troca_Terrenos</span><span class="p">(</span><span class="n">CartaTesouro</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que representa uma carta que troca os terrenos</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Carta_Troca_Terrenos.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Carta_Troca_Terrenos.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância da carta troca de terrenos</span>
+
+<span class="sd">        :param face: Face da carta.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Carta_troca_habilidades">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Carta_troca_habilidades">[documentos]</a>
+<span class="k">class</span> <span class="nc">Carta_troca_habilidades</span><span class="p">(</span><span class="n">CartaTesouro</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que representa uma carta de troca de habilidades</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Carta_troca_habilidades.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Carta_troca_habilidades.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">face</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância da carta de troca habilidades.</span>
+
+<span class="sd">        :param face: Face da carta.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">face</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Terreno">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Terreno">[documentos]</a>
+<span class="k">class</span> <span class="nc">Terreno</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Classe que representa um terreno no tabuleiro do jogo Ilha Proibida.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<div class="viewcode-block" id="Terreno.__init__">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Terreno.__init__">[documentos]</a>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nome</span><span class="p">,</span> <span class="n">tafv</span><span class="p">,</span> <span class="n">posx</span><span class="p">,</span> <span class="n">posy</span><span class="p">,</span> <span class="n">image_src</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Inicializa a instância do terreno.</span>
+
+<span class="sd">        :param nome: Nome do terreno.</span>
+<span class="sd">        :param tafv: Valor da face do terreno.</span>
+<span class="sd">        :param: posx: X position on a grid (6x6)</span>
+<span class="sd">        :param: posy: Y position on a grid (6x6)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">nome</span> <span class="o">=</span> <span class="n">nome</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tafv</span> <span class="o">=</span> <span class="n">tafv</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jogadores</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">afundado</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">image_src</span> <span class="o">=</span> <span class="n">image_src</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">posx</span> <span class="o">=</span> <span class="n">posx</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">posy</span> <span class="o">=</span> <span class="n">posy</span></div>
+
+
+<div class="viewcode-block" id="Terreno.string_rep">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Terreno.string_rep">[documentos]</a>
+    <span class="k">def</span> <span class="nf">string_rep</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Retorna uma representação em string do terreno.</span>
+
+<span class="sd">        :return: String representando o terreno.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">afundado</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">nome</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">jogadores</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">+=</span> <span class="s2">&quot; &quot;</span> <span class="o">+</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">jog</span><span class="o">.</span><span class="n">nome</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">jog</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">jogadores</span><span class="p">])</span>
+
+        <span class="n">faltam</span> <span class="o">=</span> <span class="n">__TABLE_SPACES__</span> <span class="o">-</span> <span class="mi">3</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">+</span> <span class="s2">&quot; &quot;</span> <span class="o">*</span> <span class="n">faltam</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">tafv</span></div>
+
+
+<div class="viewcode-block" id="Terreno.colocar_jogador">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Terreno.colocar_jogador">[documentos]</a>
+    <span class="k">def</span> <span class="nf">colocar_jogador</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">jogador</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Coloca um jogador no terreno.</span>
+
+<span class="sd">        :param jogador: Instância do jogador a ser colocado no terreno.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">jogadores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">jogador</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Terreno.afundar">
+<a class="viewcode-back" href="../../pySrc.html#pySrc.ilha.Terreno.afundar">[documentos]</a>
+    <span class="k">def</span> <span class="nf">afundar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Afundar o terreno.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">afundado</span> <span class="o">=</span> <span class="kc">True</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">ilha</span> <span class="o">=</span> <span class="n">IlhaProibida</span><span class="p">()</span>
+    <span class="n">ilha</span><span class="o">.</span><span class="n">imprimir_tabuleiro_ilha</span><span class="p">()</span>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Anderson Amorim, Fernanda Araujo, Finn Kockelke, Vanessa M Vianna.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

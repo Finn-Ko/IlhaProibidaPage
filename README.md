@@ -5,7 +5,7 @@ This repository contains the result of a student project as part of the POO cour
 
 We present this as the final result of the group Fogo.
 
-The game can be accessed on the GitHub Page for this repository [here](https://finn-ko.github.io/IlhaProibidaPage/)
+The game can be accessed on the GitHub Page for this repository [here](https://finn-ko.github.io/IlhaProibidaPage/).
 
 ## Technologies
 

@@ -24,7 +24,7 @@ class Canvas:
 
         """
         img = window.Image.new()
-        img.src = "img/background.jpg"
+        img.src = island.image_src
 
         def on_image_load(e):
             """

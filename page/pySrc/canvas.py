@@ -81,4 +81,4 @@ class Canvas:
         img.bind("load", on_image_load)
 
 if __name__ == "__main__":
-    Canvas().draw_island(some_island_instance)
+    Canvas()

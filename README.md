@@ -42,6 +42,7 @@ like the images under `page/img`, the python/brython code under
 
 The `docs` folder contains the documentation as html or md under `docs/[html, markdown]`.
 
+The `.idea` folder contains IDE project information which comes in handy if you use PyCharm.
 ## Contributions
 
 You are very welcome to help us out, by forking and creating a MR with new features or fixes. :)

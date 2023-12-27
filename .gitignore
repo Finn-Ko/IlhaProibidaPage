@@ -150,6 +150,7 @@ cython_debug/
 
 # Documentation build data
 _docs/
+_docs/*
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
